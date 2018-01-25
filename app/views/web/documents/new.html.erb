@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 white-box cstm-white-box">
+      <h1 class="text-center">Create Document</h1>
+      <%= simple_nested_form_for  @customer, html: {class: "form-material form-horizontal"} ,url:documents_path(@customer) , method: :post  do |f| %>
+        <%= render partial:'document_fields' , locals: {f: f} %>
+      <%end%>
+  </div>
+</div>
+<%= link_to 'Back', documents_path %>

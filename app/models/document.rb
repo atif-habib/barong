@@ -1,4 +1,6 @@
 class Document < ApplicationRecord
+  attachment :upload
+  belongs_to :customer
 end
 
 # == Schema Information

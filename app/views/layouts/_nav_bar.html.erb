@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark mb-4">
+  <div class="container">
+    <%= link_to 'Barong', index_path, class: 'navbar-brand' %>
+    <div class="collapse navbar-collapse">
+      <%if current_account.present?%>
+        <ul class="navbar-nav mr-auto">
+          <li>
+            <%= link_to 'Customers', customers_path %>
+          </li>
+          <li class="left-mrgn">
+            <%#= link_to 'Edit', edit_account_path(current_account) %>
+          </li>
+        </ul>
+        <%= link_to 'Sign out', destroy_account_session_path, method: :delete %>
+      <%else%>
+        <%= link_to 'Sign in', new_account_session_path %>
+      <%end%>
+    </div>
+  </div>
+</nav>

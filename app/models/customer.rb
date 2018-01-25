@@ -1,4 +1,7 @@
 class Customer < ApplicationRecord
+  has_many :documents, dependent: :destroy
+  # accepts_attachments_for :documents
+  accepts_nested_attributes_for :documents, allow_destroy: true
 end
 
 # == Schema Information

@@ -1,0 +1,29 @@
+  <%= f.fields_for :documents do |a| %>
+    <div class= 'main row'>
+      <div class='col-md-6'>
+        <%= a.input :doc_number, placeholder: '', input_html:{autocomplete: :off }  %>
+      </div>
+    </div>
+    <div class= 'main row'>
+      <div class='col-md-6'>
+        <%= a.input :doc_type, placeholder: '', input_html:{autocomplete: :off }  %>
+      </div>
+    </div>
+    <div class= 'main row'>
+      <div class='col-md-6'>
+        <%= a.input :doc_expire, placeholder: '', input_html:{autocomplete: :off }  %>
+      </div>
+    </div>
+    <div class= 'main row'>
+      <div class='col-md-6'>
+       <%= attachment_image_tag a.object, :upload, :fill, 150, 150 %>
+        <%= a.attachment_field :upload %>
+      </div>
+    </div>
+    <%a.hidden_field :customer_id, value: @customer.id%>
+    <%= a.link_to_remove 'Remove' %>
+  <% end %>
+<%= f.link_to_add 'Add Document', :documents , class: 'add_prod' %>
+  <div class='col-md-12 text-center cstm-btn-pos'>
+    <%= f.submit 'Save',class: 'btn btn-info btn-lg'%>
+  </div>
