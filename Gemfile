@@ -17,6 +17,7 @@ gem "simple_form"
 gem "nested_form"
 gem "refile", require: "refile/rails", github: "refile/refile"
 gem "refile-mini_magick"
+gem 'doorkeeper',   '~> 4.2.6'
 group :development, :test do
   gem 'listen',     '~> 3.1'
   gem 'pry-byebug', '~> 3.5'
