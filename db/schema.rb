@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180124190951) do
+=======
+ActiveRecord::Schema.define(version: 20180122161524) do
+>>>>>>> fbe8d344b5241731f5df1729ca313c3594017cc2
 
   create_table "accounts", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -39,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180124190951) do
     t.index ["unlock_token"], name: "index_accounts_on_unlock_token", unique: true
   end
 
+<<<<<<< HEAD
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "first_name"
     t.string "last_name"
@@ -67,6 +72,11 @@ ActiveRecord::Schema.define(version: 20180124190951) do
   create_table "oauth_access_grants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "resource_owner_id", null: false
     t.bigint "application_id", null: false
+=======
+  create_table "oauth_access_grants", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "resource_owner_id", null: false
+    t.integer "application_id", null: false
+>>>>>>> fbe8d344b5241731f5df1729ca313c3594017cc2
     t.string "token", null: false
     t.integer "expires_in", null: false
     t.text "redirect_uri", null: false
@@ -77,9 +87,15 @@ ActiveRecord::Schema.define(version: 20180124190951) do
     t.index ["token"], name: "index_oauth_access_grants_on_token", unique: true
   end
 
+<<<<<<< HEAD
   create_table "oauth_access_tokens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "resource_owner_id"
     t.bigint "application_id"
+=======
+  create_table "oauth_access_tokens", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "resource_owner_id"
+    t.integer "application_id"
+>>>>>>> fbe8d344b5241731f5df1729ca313c3594017cc2
     t.string "token", null: false
     t.string "refresh_token"
     t.integer "expires_in"
@@ -93,7 +109,11 @@ ActiveRecord::Schema.define(version: 20180124190951) do
     t.index ["token"], name: "index_oauth_access_tokens_on_token", unique: true
   end
 
+<<<<<<< HEAD
   create_table "oauth_applications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+=======
+  create_table "oauth_applications", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+>>>>>>> fbe8d344b5241731f5df1729ca313c3594017cc2
     t.string "name", null: false
     t.string "uid", null: false
     t.string "secret", null: false
