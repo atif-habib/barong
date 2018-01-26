@@ -6,7 +6,7 @@
     </div>
     <div class= 'main row'>
       <div class='col-md-6'>
-        <%= a.input :doc_type, placeholder: '', input_html:{autocomplete: :off }  %>
+        <%= a.input :doc_type, collection: document_type_list, include_blank: "Please Select", input_html: {class: 'form-control input-md' } %>
       </div>
     </div>
     <div class= 'main row'>

@@ -14,7 +14,6 @@ module Web
 
     # GET /documents/new
     def new
-      @customer = Customer.find(params[:id])
       @customer.documents.build
     end
 
@@ -24,7 +23,6 @@ module Web
 
     # POST /documents
     def create
-      @customer = Customer.find(params[:id])
       if @customer.update(document_params)
         redirect_to customers_path, notice: 'Documents was succesfully updated'
       else
@@ -34,7 +32,7 @@ module Web
 
     # PATCH/PUT /documents/1
     def update
-      if @document.update(document_params)
+      if @customer.update(document_params)
         redirect_to @document, notice: 'Document was successfully updated.'
       else
         render :edit
@@ -58,7 +56,7 @@ module Web
       end
       # Only allow a trusted parameter "white list" through.
       def document_params
-        params.require(:customer).permit(document_attributes: [:id, :upload, :customer_id, :doc_number, :_destroy])
+        params.require(:customer).permit(documents_attributes: [:id, :upload, :customer_id, :doc_number, :doc_type, :doc_expire, :_destroy])
       end
   end
 end
